@@ -15,9 +15,9 @@ module.exports = {
     app: PATHS.src
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist'
+    filename: `${PATHS.assets}js/[name].js`,
+    path: PATHS.dist,
+    publicPath: '/'
   },
   module: {
     rules: [{
@@ -57,7 +57,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: `${PATHS.assets}css/[name].css`
     })
   ]
 }
